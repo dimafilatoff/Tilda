@@ -10,8 +10,8 @@ for ($row = 1; $row <= 5; $row++) {
     for ($col = 1; $col <= 7; $col++) {
         $x = rand(1, 1000);
         $array[$row][$col] = $x;
-        $arraySum['row'][$row] += $x;
-        $arraySum['col'][$col] += $x;
+        $arraySum['row'][$row] = (isset($arraySum['row'][$row])) ? $arraySum['row'][$row] + $x : $x;
+        $arraySum['col'][$col] = (isset($arraySum['row'][$col])) ? $arraySum['row'][$col] + $x : $x;
     }
 }
 ?>
